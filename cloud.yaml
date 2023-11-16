@@ -1,5 +1,5 @@
 steps:
-- name: 'gcr.io/cloud/docker'
+- name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/docker-405301/mang_app', '.']
-- name: 'gcr.io/cloud/docker'
+- name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/docker-405301/mang_app']
