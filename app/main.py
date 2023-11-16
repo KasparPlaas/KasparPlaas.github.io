@@ -35,7 +35,7 @@ def mang(sona):
                 print("Kahjuks, kaotasid. Õige sõna oli:", sona)
 
 # Sõna, mida mängitakse
-sona = "It is very fun"
+sona = "Taristusteenused"
 
 # Mängu käivitamine
 mang(sona.lower())
