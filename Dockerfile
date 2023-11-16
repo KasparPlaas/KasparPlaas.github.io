@@ -4,14 +4,11 @@ WORKDIR /app
 
 COPY requirements.txt .
 
-RUN python -m venv /venv
-ENV PATH="/venv/bin:$PATH"
+RUN pip install --upgrade pip && \
+    pip install -r requirements.txt
 
-RUN /venv/bin/python -m pip install --upgrade pip && \
-    /venv/bin/python -m pip install -r requirements.txt
-
-COPY ./app /app
+COPY . .
 
 EXPOSE 80
 
-CMD ["/venv/bin/uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
